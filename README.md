@@ -6,22 +6,7 @@ Reference: AWS public/private subnet architecture pattern.
 
 ## Architecture
 
-```
-Internet
-   │
-Internet Gateway
-   │
-┌──────────────── VPC ────────────────┐
-│  Public Subnet (AZ-1)   Public Subnet (AZ-2)
-│   - NAT Gateway           - (route to IGW)
-│   - Bastion Host
-│   - Application Load Balancer (spans both public subnets)
-│
-│  Private Subnet (AZ-1)  Private Subnet (AZ-2)
-│   - EC2 instance (app)   - EC2 instance (app)
-│   - no public IP         - no public IP
-└───────────────────────────────────────┘
-```
+<img width="611" height="481" alt="image" src="https://github.com/user-attachments/assets/c88b88a8-d7a5-434b-81d1-a52552f8a3d3" />
 
 - **2 Availability Zones**, for redundancy
 - **Public subnets**: NAT Gateway, Bastion host, Load Balancer
